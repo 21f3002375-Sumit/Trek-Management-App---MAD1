@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="mb-4">
+    Admin Dashboard
+</h2>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Total Treks</h5>
+                <h2>{{ total_treks }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Total Users</h5>
+                <h2>{{ total_users }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Total Staff</h5>
+                <h2>{{ total_staff }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-center shadow">
+            <div class="card-body">
+                <h5>Total Bookings</h5>
+                <h2>{{ total_bookings }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="mt-4">
+    <a href="/admin/add-trek" class="btn btn-success">
+        Add Trek
+    </a>
+    <a href="/admin/treks" class="btn btn-primary">
+        View Treks
+    </a>
+    <a href="/admin/bookings" class="btn btn-dark">
+        View Bookings
+    </a>
+    <a href="/admin/bookings" class="btn btn-info">
+        View Bookings
+    </a>
+    <a href="/admin/users" class="btn btn-primary">
+        View Users
+    </a>
+    <a href="/admin/staff" class="btn btn-secondary">
+        View Staff
+    </a>
+    <a href="/admin/search" class="btn btn-dark">
+        Search Treks
+    </a>
+</div>
+
+{% endblock %}

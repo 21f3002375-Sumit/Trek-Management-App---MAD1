@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Assign Staff</h2>
+<h4>{{ trek.name }}</h4>
+<form method="POST">
+    <div class="mb-3">
+        <label>Select Staff</label>
+        <select name="staff_id" class="form-select">
+            {% for staff in staffs %}
+            <option value="{{ staff.id }}">
+                {{ staff.name }}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <button class="btn btn-success">
+        Assign
+    </button>
+</form>
+
+{% endblock %}

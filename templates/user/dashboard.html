@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Available Treks</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Difficulty</th>
+            <th>Duration</th>
+            <th>Slots</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for trek in treks %}
+        <tr>
+            <td>{{ trek.name }}</td>
+            <td>{{ trek.location }}</td>
+            <td>{{ trek.difficulty }}</td>
+            <td>{{ trek.duration }}</td>
+            <td>{{ trek.slots }}</td>
+            <td>{{ trek.status }}</td>
+            <td>
+                <a href="/user/book/{{ trek.id }}" class="btn btn-success">
+                    Book
+                </a>
+                <a href="/user/bookings" class="btn btn-primary mb-3">
+                    My Bookings
+                </a>
+                <a href="/user/profile" class="btn btn-secondary mb-3">
+                    Edit Profile
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

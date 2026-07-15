@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Edit Trek</h2>
+
+<form method="POST">
+    <div class="mb-3">
+        <label>Name</label>
+        <input type="text" name="name" value="{{ trek.name }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Location</label>
+        <input type="text" name="location" value="{{ trek.location }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Difficulty</label>
+        <select name="difficulty" class="form-select">
+            <option value="Easy" {% if trek.difficulty=="Easy" %}selected{% endif %}>
+                Easy
+            </option>
+            <option value="Moderate" {% if trek.difficulty=="Moderate" %}selected{% endif %}>
+                Moderate
+            </option>
+            <option value="Hard" {% if trek.difficulty=="Hard" %}selected{% endif %}>
+                Hard
+            </option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label>Duration</label>
+        <input type="number" name="duration" value="{{ trek.duration }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Slots</label>
+        <input type="number" name="slots" value="{{ trek.slots }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Start Date</label>
+        <input type="date" name="start_date" value="{{ trek.start_date }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>End Date</label>
+        <input type="date" name="end_date" value="{{ trek.end_date }}" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label>Status</label>
+        <select name="status" class="form-select">
+            <option {% if trek.status=="Open" %}selected{% endif %}>
+                Open
+            </option>
+            <option {% if trek.status=="Closed" %}selected{% endif %}>
+                Closed
+            </option>
+        </select>
+    </div>
+    <button class="btn btn-warning">
+        Update Trek
+    </button>
+</form>
+
+{% endblock %}
